@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		66029BDA2261A51F00CD5F74 /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BD92261A51F00CD5F74 /* ExploreController.swift */; };
+		66029BDC2261B30900CD5F74 /* ResturantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BDB2261B30900CD5F74 /* ResturantModel.swift */; };
+		66029BE12261DEB900CD5F74 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE02261DEB900CD5F74 /* TabBarController.swift */; };
+		66029BE32261DF7100CD5F74 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE22261DF7100CD5F74 /* FavoritesController.swift */; };
+		66029BE52261EE9B00CD5F74 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE42261EE9B00CD5F74 /* ExploreCell.swift */; };
+		66CBE11922613F7500A7C2BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBE11822613F7500A7C2BF /* AppDelegate.swift */; };
+		66CBE11E22613F7500A7C2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CBE11C22613F7500A7C2BF /* Main.storyboard */; };
+		66CBE12022613F7700A7C2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66CBE11F22613F7700A7C2BF /* Assets.xcassets */; };
+		66CBE12322613F7700A7C2BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CBE12122613F7700A7C2BF /* LaunchScreen.storyboard */; };
+		66CBE12B226140DD00A7C2BF /* ChooseAnAddressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBE12A226140DD00A7C2BF /* ChooseAnAddressController.swift */; };
+		66CBE12E2261417500A7C2BF /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBE12D2261417500A7C2BF /* Globals.swift */; };
+		6F386003A7783EA1705282E3 /* Pods_DoorDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D732D9FA8653BE4090268C /* Pods_DoorDash.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04B5DCD440D80E394A5944ED /* Pods-DoorDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorDash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorDash/Pods-DoorDash.debug.xcconfig"; sourceTree = "<group>"; };
+		66029BD92261A51F00CD5F74 /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
+		66029BDB2261B30900CD5F74 /* ResturantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantModel.swift; sourceTree = "<group>"; };
+		66029BE02261DEB900CD5F74 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		66029BE22261DF7100CD5F74 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		66029BE42261EE9B00CD5F74 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		66CBE11522613F7500A7C2BF /* DoorDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66CBE11822613F7500A7C2BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		66CBE11D22613F7500A7C2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		66CBE11F22613F7700A7C2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66CBE12222613F7700A7C2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		66CBE12422613F7700A7C2BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66CBE12A226140DD00A7C2BF /* ChooseAnAddressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAnAddressController.swift; sourceTree = "<group>"; };
+		66CBE12D2261417500A7C2BF /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		9135D49BAE3B78CFD89F0A51 /* Pods-DoorDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorDash.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorDash/Pods-DoorDash.release.xcconfig"; sourceTree = "<group>"; };
+		B5D732D9FA8653BE4090268C /* Pods_DoorDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoorDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		66CBE11222613F7500A7C2BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F386003A7783EA1705282E3 /* Pods_DoorDash.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04672594BC875F2C55F5F08F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04B5DCD440D80E394A5944ED /* Pods-DoorDash.debug.xcconfig */,
+				9135D49BAE3B78CFD89F0A51 /* Pods-DoorDash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		66029BDD2261B30D00CD5F74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				66029BDB2261B30900CD5F74 /* ResturantModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		66029BE62261EE9F00CD5F74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				66029BE42261EE9B00CD5F74 /* ExploreCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		66CBE10C22613F7500A7C2BF = {
+			isa = PBXGroup;
+			children = (
+				66CBE11722613F7500A7C2BF /* DoorDash */,
+				66CBE11622613F7500A7C2BF /* Products */,
+				04672594BC875F2C55F5F08F /* Pods */,
+				A1477701B58E5B28BB2C95DA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		66CBE11622613F7500A7C2BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66CBE11522613F7500A7C2BF /* DoorDash.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66CBE11722613F7500A7C2BF /* DoorDash */ = {
+			isa = PBXGroup;
+			children = (
+				66CBE12D2261417500A7C2BF /* Globals.swift */,
+				66CBE11822613F7500A7C2BF /* AppDelegate.swift */,
+				66029BE62261EE9F00CD5F74 /* Views */,
+				66029BDD2261B30D00CD5F74 /* Models */,
+				66CBE12C226140E700A7C2BF /* Controllers */,
+				66CBE11C22613F7500A7C2BF /* Main.storyboard */,
+				66CBE11F22613F7700A7C2BF /* Assets.xcassets */,
+				66CBE12122613F7700A7C2BF /* LaunchScreen.storyboard */,
+				66CBE12422613F7700A7C2BF /* Info.plist */,
+			);
+			path = DoorDash;
+			sourceTree = "<group>";
+		};
+		66CBE12C226140E700A7C2BF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				66CBE12A226140DD00A7C2BF /* ChooseAnAddressController.swift */,
+				66029BD92261A51F00CD5F74 /* ExploreController.swift */,
+				66029BE02261DEB900CD5F74 /* TabBarController.swift */,
+				66029BE22261DF7100CD5F74 /* FavoritesController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A1477701B58E5B28BB2C95DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5D732D9FA8653BE4090268C /* Pods_DoorDash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66CBE11422613F7500A7C2BF /* DoorDash */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66CBE12722613F7700A7C2BF /* Build configuration list for PBXNativeTarget "DoorDash" */;
+			buildPhases = (
+				3ED9F3CDA4C29F7569855364 /* [CP] Check Pods Manifest.lock */,
+				66CBE11122613F7500A7C2BF /* Sources */,
+				66CBE11222613F7500A7C2BF /* Frameworks */,
+				66CBE11322613F7500A7C2BF /* Resources */,
+				F30E2459EAA6C815BD114055 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoorDash;
+			productName = DoorDash;
+			productReference = 66CBE11522613F7500A7C2BF /* DoorDash.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		66CBE10D22613F7500A7C2BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "utopia incubator";
+				TargetAttributes = {
+					66CBE11422613F7500A7C2BF = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 66CBE11022613F7500A7C2BF /* Build configuration list for PBXProject "DoorDash" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 66CBE10C22613F7500A7C2BF;
+			productRefGroup = 66CBE11622613F7500A7C2BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				66CBE11422613F7500A7C2BF /* DoorDash */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66CBE11322613F7500A7C2BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CBE12322613F7700A7C2BF /* LaunchScreen.storyboard in Resources */,
+				66CBE12022613F7700A7C2BF /* Assets.xcassets in Resources */,
+				66CBE11E22613F7500A7C2BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ED9F3CDA4C29F7569855364 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DoorDash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F30E2459EAA6C815BD114055 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DoorDash/Pods-DoorDash-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DoorDash/Pods-DoorDash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		66CBE11122613F7500A7C2BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66CBE12B226140DD00A7C2BF /* ChooseAnAddressController.swift in Sources */,
+				66CBE12E2261417500A7C2BF /* Globals.swift in Sources */,
+				66029BDC2261B30900CD5F74 /* ResturantModel.swift in Sources */,
+				66029BE52261EE9B00CD5F74 /* ExploreCell.swift in Sources */,
+				66029BE12261DEB900CD5F74 /* TabBarController.swift in Sources */,
+				66029BE32261DF7100CD5F74 /* FavoritesController.swift in Sources */,
+				66029BDA2261A51F00CD5F74 /* ExploreController.swift in Sources */,
+				66CBE11922613F7500A7C2BF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		66CBE11C22613F7500A7C2BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66CBE11D22613F7500A7C2BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		66CBE12122613F7700A7C2BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				66CBE12222613F7700A7C2BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		66CBE12522613F7700A7C2BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		66CBE12622613F7700A7C2BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66CBE12822613F7700A7C2BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04B5DCD440D80E394A5944ED /* Pods-DoorDash.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3434CZ5U2F;
+				INFOPLIST_FILE = DoorDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "utopia-incubator.DoorDash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66CBE12922613F7700A7C2BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9135D49BAE3B78CFD89F0A51 /* Pods-DoorDash.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3434CZ5U2F;
+				INFOPLIST_FILE = DoorDash/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "utopia-incubator.DoorDash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		66CBE11022613F7500A7C2BF /* Build configuration list for PBXProject "DoorDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CBE12522613F7700A7C2BF /* Debug */,
+				66CBE12622613F7700A7C2BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66CBE12722613F7700A7C2BF /* Build configuration list for PBXNativeTarget "DoorDash" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66CBE12822613F7700A7C2BF /* Debug */,
+				66CBE12922613F7700A7C2BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 66CBE10D22613F7500A7C2BF /* Project object */;
+}
