@@ -9,44 +9,32 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 //https:\/\/cdn.doordash.com\/media\/restaurant\/cover\/The-Halal-Guys-RESIZED_2.png
 class ExploreController: UIViewController {
     
 
-    var lat:Double!
-    var lng:Double!
     var resturantList:[ResturantModel] = []
-    
     var exploreTableView : UITableView!
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : DoorDashRed]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.gray
-        
-        setUpTableView()
-        // Do any additional setup after loading the view.
-//        print("lat: \(lat!), lon: \(lng!)")
-//        let urlString = "https://api.doordash.com/v1/store_search"
-//        let param = ["lat":String(lat),"lng":String(lng)]
-        
-//        getResturants(url: urlString, parameters: param)
-        
-//        let s = "https://cdn.doordash.com/media/restaurant/cover/The-Halal-Guys-RESIZED_2.png"
-//        guard let url = URL(string: s) else {
-//            print("String to URL failed")
-//            return
-//        }
-//
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-//        imageView.load(url: url)
-//
-//        self.view.addSubview(imageView)
-        
+        self.view.backgroundColor = UIColor.white
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        SVProgressHUD.show()
+        let urlString = "https://api.doordash.com/v1/store_search"
+        let param = ["lat":String(lat),"lng":String(lng)]
+        getResturants(url: urlString, parameters: param)
+    }
 }
 
 
@@ -54,7 +42,7 @@ class ExploreController: UIViewController {
 
 
 
-//MARK: - to get and update resturant data
+//MARK: - to get and update resturant data--------------------------------------------------------------------
 extension ExploreController{
     func getResturants(url:String, parameters:[String:String])
     {
@@ -87,19 +75,22 @@ extension ExploreController{
             
             let newResturant = ResturantModel()
             newResturant.name = data["business"]["name"].stringValue
-            print(newResturant.name)
+            //print(newResturant.name)
             newResturant.tag = data["tags"][0].stringValue
-            print(newResturant.tag)
+            //print(newResturant.tag)
             newResturant.imageURL = data["cover_img_url"].stringValue
-            print(newResturant.imageURL)
+            //print(newResturant.imageURL)
             newResturant.deliveryFee = data["delivery_fee"].intValue
-            print(newResturant.deliveryFee)
+            //print(newResturant.deliveryFee)
             newResturant.deliveryTime = data["asap_time"].intValue
-            print(newResturant.deliveryTime)
+            //print(newResturant.deliveryTime)
             
             resturantList.append(newResturant)
             i += 1
         }
+        SVProgressHUD.dismiss()
+        setUpTableView()
+        exploreTableView.reloadData()
     }
 }
 
@@ -107,7 +98,7 @@ extension ExploreController{
 
 
 
-//MARK: - for tableView
+//MARK: - for tableView -----------------------------------------------------------------------------------------
 
 extension ExploreController:UITableViewDelegate,UITableViewDataSource{
 
@@ -120,30 +111,39 @@ extension ExploreController:UITableViewDelegate,UITableViewDataSource{
         exploreTableView.dataSource = self
         
         //TODO: Register your MessageCell.xib file here:
-        exploreTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         exploreTableView.register(ExploreCell.self, forCellReuseIdentifier: "exploreCell")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return resturantList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCell", for: indexPath)
+
         
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "exploreCell") as? ExploreCell
+        if cell == nil {
+            cell = ExploreCell(style: .default, reuseIdentifier: "exploreCell")
+            cell!.setUp()
+        }
+        cell!.updateDate(data: resturantList[indexPath.row])
+        return cell!
     }
 
 }
 
 
 
-//MARK: - to load image from Alamofire's response for tableView
+//MARK: - to load image from Alamofire's response for tableView -----------------------------------------------
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in

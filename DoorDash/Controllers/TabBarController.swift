@@ -10,33 +10,52 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
-    var lat:Double!
-    var lng:Double!
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         self.tabBar.isTranslucent = false
-        
+        self.title = "DoorDash"
+        addLeftNavItemOnView()
+        addChilds()
+    
+    }
+    
+    public func addChilds(){
         let exploreController = ExploreController()
-        exploreController.lat = self.lat
-        exploreController.lng = self.lng
         exploreController.tabBarItem.title = "Explore"
-        //exploreController.tabBarItem.image = UIImage(named:"Explore")
-        //exploreController.tabBarItem.selectedImage = UIImage(named:"tarbar1_yes")
+        exploreController.tabBarItem.image = UIImage(named:"tab-explore")
+        exploreController.tabBarItem.selectedImage = UIImage(named:"tab-explore")
         self.addChild(exploreController)
         
         
         
         let favoritesController = FavoritesController()
         favoritesController.tabBarItem.title = "Favorites"
-        //favoritesController.tabBarItem.image = UIImage(named:"Favorites")
+        favoritesController.tabBarItem.image = UIImage(named:"tab-star")
+        favoritesController.tabBarItem.selectedImage = UIImage(named:"star-white")
         self.addChild(favoritesController)
-        
-
     }
+    
+    
+    func addLeftNavItemOnView ()
+    {
+        let img = UIImage(named: "nav-address")
+        
+        let leftBtn = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(leftNavButtonClick))
+        self.navigationItem.leftBarButtonItem = leftBtn
+        
+        
+        
+    }
+    
+    @objc func leftNavButtonClick()
+    {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+
+    
     
     
 

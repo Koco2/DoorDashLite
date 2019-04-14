@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import SnapKit
 import CoreLocation
-
+import SVProgressHUD
 
 /*
  * Users can select a location by dragging on the map starting at the current location of the user.
@@ -23,23 +23,20 @@ class ChooseAnAddressController: UIViewController {
     private var confirmButton: UIButton!
     private var locationManager: CLLocationManager!
     private var geocoder: CLGeocoder!
+    private var myAnnotation: MKPointAnnotation = MKPointAnnotation()
     
-    public var userLocation:CLLocation!{
-        didSet{
-            getHumanReadableAddress()
-        }
-    }
+    public var userLocation:CLLocation!
     
-    override func viewWillAppear(_ animated: Bool) {
-        determineCurrentLocation()
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        determineCurrentLocation()
         UI_SetUp()
+        addGesture()
     }
-    
 }
+
 
 
 
@@ -49,10 +46,13 @@ class ChooseAnAddressController: UIViewController {
 extension ChooseAnAddressController: CLLocationManagerDelegate{
     
     private func determineCurrentLocation(){
+        
+        SVProgressHUD.show()
+        
         //TODO:Set up the location manager here.
         locationManager = CLLocationManager()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
@@ -61,22 +61,28 @@ extension ChooseAnAddressController: CLLocationManagerDelegate{
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("updating!!!!--------------")
+        
         userLocation = locations[0] as CLLocation
+        
+        lat = userLocation.coordinate.latitude
+        lng = userLocation.coordinate.longitude
         
         // Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
         //manager.stopUpdatingLocation()
         
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        let center = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
         
+
         map.setRegion(region, animated: true)
         
-        // Drop a pin at user's Current Location
-        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
-        myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-        myAnnotation.title = "Current location"
-        map.addAnnotation(myAnnotation)
+        dropPin(lat: lat, lng: lng)
+        locationManager.stopUpdatingLocation()
+        
+        SVProgressHUD.dismiss()
+        getHumanReadableAddress()
     }
     
     private func locationManager(manager: CLLocationManager, didFailWithError error: Error)
@@ -89,11 +95,7 @@ extension ChooseAnAddressController: CLLocationManagerDelegate{
         // Create Location
         
         
-        let location = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        
-        
-        
-        
+        let location = CLLocation(latitude: lat, longitude: lng)
         geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
             // Process Response
             self.processResponse(withPlacemarks: placemarks, error: error)
@@ -123,7 +125,7 @@ extension ChooseAnAddressController: CLLocationManagerDelegate{
 
 
 
-// MARK: - Views
+// MARK: - Add Component
 extension ChooseAnAddressController{
     
     
@@ -140,7 +142,18 @@ extension ChooseAnAddressController{
     }
     
     
-    //add all UI components for the UIViewController
+    //add gesture recognizer
+    private func addGesture(){
+        
+        view.isUserInteractionEnabled = true
+        let guesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_ :)))
+        view.addGestureRecognizer(guesture)
+        
+        
+    }
+    
+    
+    //add all UI components
     private func add_UI_components(){
         addAdressLabel()
         addConfirmButton()
@@ -160,7 +173,7 @@ extension ChooseAnAddressController{
         
         confirmButton.backgroundColor = UIColor(red: 254/255, green: 26/255, blue: 64/255, alpha: 1)
         confirmButton.setTitle("Confirm Address", for: .normal)
-        confirmButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+        confirmButton.addTarget(self, action: #selector(goToExplore), for: .touchUpInside)
     }
     
     private func addMap(){
@@ -205,14 +218,37 @@ extension ChooseAnAddressController{
 extension ChooseAnAddressController{
 
     //change to restaurantListController
-    @objc private func buttonClicked(){
+    @objc private func goToExplore(){
         
         
         let tabBarController = TabBarController()
-        tabBarController.lat = userLocation.coordinate.latitude
-        tabBarController.lng = userLocation.coordinate.longitude
-        
-        
         self.navigationController?.pushViewController(tabBarController, animated: true)
+    }
+    
+    private func dropPin(lat:Double,lng:Double){
+        //remove all pins
+        let allAnnotations = map.annotations
+        map.removeAnnotations(allAnnotations)
+        
+        //drop a new Pin
+        myAnnotation.coordinate = CLLocationCoordinate2DMake(lat, lng);
+        map.addAnnotation(myAnnotation)
+    }
+    
+    @objc func longPress(_ sender:UILongPressGestureRecognizer){
+        
+        if(sender.state == UIGestureRecognizer.State.began)
+        {
+            let touchLocation = sender.location(in: map)
+            let locationCoordinate = map.convert(touchLocation, toCoordinateFrom: map)
+            print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+            lat = locationCoordinate.latitude
+            lng = locationCoordinate.longitude
+            
+            
+            dropPin(lat: lat, lng: lng)
+            getHumanReadableAddress()
+        }
+        
     }
 }

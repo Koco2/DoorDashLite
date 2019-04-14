@@ -8,5 +8,6 @@ target 'DoorDash' do
     pod 'SnapKit', '~> 4.0.0'
     pod 'Alamofire', '~> 4.0.0'
     pod 'SwiftyJSON'
+    pod 'SVProgressHUD'
 
 end
