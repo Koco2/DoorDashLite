@@ -11,10 +11,10 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
-//https:\/\/cdn.doordash.com\/media\/restaurant\/cover\/The-Halal-Guys-RESIZED_2.png
+//Users can browse a list of stores available to the location selected previously.
 class ExploreController: UIViewController {
     
-
+    //store data for nearby resturants
     var resturantList:[ResturantModel] = []
     var exploreTableView : UITableView!
     
@@ -30,10 +30,8 @@ class ExploreController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        SVProgressHUD.show()
-        let urlString = "https://api.doordash.com/v1/store_search"
-        let param = ["lat":String(lat),"lng":String(lng)]
-        getResturants(url: urlString, parameters: param)
+        //load the tableView
+        display()
     }
 }
 
@@ -44,6 +42,17 @@ class ExploreController: UIViewController {
 
 //MARK: - to get and update resturant data--------------------------------------------------------------------
 extension ExploreController{
+    
+    
+    private func display(){
+        //show progresshud untill all the resturant data have been added to resturantList
+        SVProgressHUD.show()
+        let urlString = "https://api.doordash.com/v1/store_search"
+        let param = ["lat":String(lat),"lng":String(lng)]
+        getResturants(url: urlString, parameters: param)
+    }
+    
+    
     func getResturants(url:String, parameters:[String:String])
     {
         Alamofire.request(url, method:.get, parameters:parameters).responseJSON
@@ -57,12 +66,14 @@ extension ExploreController{
                     //print(jsonData.count)
                     //print(weatherJSON)
                     //self.updateWeatherData(json:weatherJSON)
+                    
+                    
+                    //add retrieved data to resturantList
                     self.updateResturantData(jsonData: jsonData)
                 }
                 else
                 {
                     print("Error \(String(describing: response.result.error))")
-                    //self.cityLabel.text = "Connecting Issue"
                 }
         }
     }
@@ -89,6 +100,7 @@ extension ExploreController{
             i += 1
         }
         SVProgressHUD.dismiss()
+        
         setUpTableView()
         exploreTableView.reloadData()
     }

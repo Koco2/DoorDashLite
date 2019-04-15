@@ -43,26 +43,33 @@ extension ExploreCell{
     
     private func addCoverImage(){
         coverImage = UIImageView()
+        self.addSubview(coverImage)
         coverImage.layer.cornerRadius = 4.0
         coverImage.clipsToBounds = true
-        self.addSubview(coverImage)
     }
     private func addNameLabel(){
         nameLabel = UILabel()
         self.addSubview(nameLabel)
+        nameLabel.textAlignment = .left
     }
     private func addTagLabel(){
         tagLabel = UILabel()
         self.addSubview(tagLabel)
+        tagLabel.textColor = UIColor.gray
+        tagLabel.textAlignment = .left
     }
     private func addDeliveryFeeLabel(){
         deliveryFeeLabel = UILabel()
         self.addSubview(deliveryFeeLabel)
+        deliveryFeeLabel.textColor = UIColor.darkGray
+        deliveryFeeLabel.textAlignment = .left
         
     }
     private func addDeliveryTimeLabel(){
         deliveryTimeLabel = UILabel()
         self.addSubview(deliveryTimeLabel)
+        deliveryTimeLabel.textColor = UIColor.darkGray
+        deliveryTimeLabel.textAlignment = .right
     }
     
     //SnapKit layout
@@ -90,9 +97,9 @@ extension ExploreCell{
             make.size.equalTo(CGSize(width: 200, height: 20))
         }
         deliveryTimeLabel.snp.makeConstraints { (make) in
-            make.right.equalTo(15)
-            make.bottom.equalTo(15)
-            make.size.equalTo(CGSize(width:SCREEN_HEIGHT/10 , height: SCREEN_HEIGHT/10))
+            make.right.equalTo(-15)
+            make.bottom.equalTo(-15)
+            make.size.equalTo(CGSize(width:60 , height: 20))
         }
     }
     
@@ -123,10 +130,14 @@ extension ExploreCell{
         tagLabel.text = tag
     }
     private func updateDeliveryFeeLabel(fee:Int){
-        deliveryFeeLabel.text = String(fee)
+        if fee == 0{
+            deliveryFeeLabel.text = "Free delivery"
+        }else{
+            deliveryFeeLabel.text = "$\(fee) delivery"
+        }
     }
     private func updateDeliveryTimeLabel(time:Int){
-        deliveryTimeLabel.text = String(time)
+        deliveryTimeLabel.text = "\(time) min"
     }
     
 }

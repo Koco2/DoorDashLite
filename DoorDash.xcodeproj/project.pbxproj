@@ -12,6 +12,7 @@
 		66029BE12261DEB900CD5F74 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE02261DEB900CD5F74 /* TabBarController.swift */; };
 		66029BE32261DF7100CD5F74 /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE22261DF7100CD5F74 /* FavoritesController.swift */; };
 		66029BE52261EE9B00CD5F74 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE42261EE9B00CD5F74 /* ExploreCell.swift */; };
+		66029BEA2263EA3000CD5F74 /* ChooseAnAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66029BE92263EA3000CD5F74 /* ChooseAnAddressView.swift */; };
 		66CBE11922613F7500A7C2BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CBE11822613F7500A7C2BF /* AppDelegate.swift */; };
 		66CBE11E22613F7500A7C2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66CBE11C22613F7500A7C2BF /* Main.storyboard */; };
 		66CBE12022613F7700A7C2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66CBE11F22613F7700A7C2BF /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		66029BE02261DEB900CD5F74 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		66029BE22261DF7100CD5F74 /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		66029BE42261EE9B00CD5F74 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		66029BE92263EA3000CD5F74 /* ChooseAnAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnAddressView.swift; sourceTree = "<group>"; };
 		66CBE11522613F7500A7C2BF /* DoorDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoorDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66CBE11822613F7500A7C2BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66CBE11D22613F7500A7C2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,20 +63,113 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		66029BDD2261B30D00CD5F74 /* Models */ = {
+		66029BEB2264086000CD5F74 /* MapPage_ChooseAnAddress */ = {
+			isa = PBXGroup;
+			children = (
+				66029BEE2264089E00CD5F74 /* Model */,
+				66029BED2264088F00CD5F74 /* View */,
+				66029BEC2264087A00CD5F74 /* Controller */,
+			);
+			path = MapPage_ChooseAnAddress;
+			sourceTree = "<group>";
+		};
+		66029BEC2264087A00CD5F74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66CBE12A226140DD00A7C2BF /* ChooseAnAddressController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66029BED2264088F00CD5F74 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66029BE92263EA3000CD5F74 /* ChooseAnAddressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66029BEE2264089E00CD5F74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		66029BEF226408CC00CD5F74 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				66029BF0226408DB00CD5F74 /* Model */,
+				66029BF1226408EA00CD5F74 /* View */,
+				66029BF2226408F500CD5F74 /* Controller */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		66029BF0226408DB00CD5F74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				66029BDB2261B30900CD5F74 /* ResturantModel.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		66029BE62261EE9F00CD5F74 /* Views */ = {
+		66029BF1226408EA00CD5F74 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				66029BE42261EE9B00CD5F74 /* ExploreCell.swift */,
 			);
-			path = Views;
+			path = View;
+			sourceTree = "<group>";
+		};
+		66029BF2226408F500CD5F74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				66029BD92261A51F00CD5F74 /* ExploreController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66029BF3226409DE00CD5F74 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				66029BF722640AA000CD5F74 /* Model */,
+				66029BF622640A9B00CD5F74 /* View */,
+				66029BF522640A9200CD5F74 /* Controller */,
+				66029BE22261DF7100CD5F74 /* FavoritesController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		66029BF4226409FF00CD5F74 /* MainPage_TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				66029BE02261DEB900CD5F74 /* TabBarController.swift */,
+				66029BF3226409DE00CD5F74 /* Favorites */,
+				66029BEF226408CC00CD5F74 /* Explore */,
+			);
+			path = MainPage_TabBarController;
+			sourceTree = "<group>";
+		};
+		66029BF522640A9200CD5F74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		66029BF622640A9B00CD5F74 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66029BF722640AA000CD5F74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		66CBE10C22613F7500A7C2BF = {
@@ -100,26 +195,14 @@
 			children = (
 				66CBE12D2261417500A7C2BF /* Globals.swift */,
 				66CBE11822613F7500A7C2BF /* AppDelegate.swift */,
-				66029BE62261EE9F00CD5F74 /* Views */,
-				66029BDD2261B30D00CD5F74 /* Models */,
-				66CBE12C226140E700A7C2BF /* Controllers */,
+				66029BEB2264086000CD5F74 /* MapPage_ChooseAnAddress */,
+				66029BF4226409FF00CD5F74 /* MainPage_TabBarController */,
 				66CBE11C22613F7500A7C2BF /* Main.storyboard */,
 				66CBE11F22613F7700A7C2BF /* Assets.xcassets */,
 				66CBE12122613F7700A7C2BF /* LaunchScreen.storyboard */,
 				66CBE12422613F7700A7C2BF /* Info.plist */,
 			);
 			path = DoorDash;
-			sourceTree = "<group>";
-		};
-		66CBE12C226140E700A7C2BF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				66CBE12A226140DD00A7C2BF /* ChooseAnAddressController.swift */,
-				66029BD92261A51F00CD5F74 /* ExploreController.swift */,
-				66029BE02261DEB900CD5F74 /* TabBarController.swift */,
-				66029BE22261DF7100CD5F74 /* FavoritesController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A1477701B58E5B28BB2C95DA /* Frameworks */ = {
@@ -256,6 +339,7 @@
 				66029BE32261DF7100CD5F74 /* FavoritesController.swift in Sources */,
 				66029BDA2261A51F00CD5F74 /* ExploreController.swift in Sources */,
 				66CBE11922613F7500A7C2BF /* AppDelegate.swift in Sources */,
+				66029BEA2263EA3000CD5F74 /* ChooseAnAddressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

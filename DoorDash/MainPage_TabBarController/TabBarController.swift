@@ -10,13 +10,19 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //basic setting
         self.tabBar.isTranslucent = false
         self.title = "DoorDash"
+        
         addLeftNavItemOnView()
+        
+        //add Explore and Favorites 
         addChilds()
     
     }
